@@ -24,7 +24,12 @@
         <table class="md-table">
             <thead>
                 <tr class="md-table-headers-row">
-                    <th ng-repeat="h in headers" class="md-table-header"><a href="#" ng-click="reverse=!reverse;order(h.field,reverse)">{{h.name}}</a></th>
+                    <th ng-repeat="h in headers" class="md-table-header">
+                        <a href="#" ng-click="refreshPredicate(h.predicateIndex);order(myPredicate,null)">
+                            <span class="sortorder" ng-show="direction(h.predicateIndex) !== null" ng-class="{direction:direction(h.predicateIndex)}"></span>
+                            {{h.name}}
+                        </a>
+                    </th>
                 </tr>
             </thead>
             <tbody>
