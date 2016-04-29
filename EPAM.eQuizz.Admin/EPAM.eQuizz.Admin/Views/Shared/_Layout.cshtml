@@ -1,0 +1,27 @@
+﻿@{ 
+    Layout = null;
+}
+
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link href="~/Styles/angular-material.css" rel="stylesheet" />
+    <link href="~/Styles/DirectionStyle.css" rel="stylesheet" />
+    <link href="~/Styles/md-table-styles.css" rel="stylesheet" />
+    <link href="~/Styles/text-hightlight.css" rel="stylesheet" />
+
+    <script src="~/Scripts/libs/angular.js"></script>
+    <script src="~/Scripts/libs/angular-animate.js"></script>
+    <script src="~/Scripts/libs/angular-aria.js"></script>
+    <script src="~/Scripts/libs/angular-material.js"></script>
+    <title>E-Quiz</title>
+</head>
+<body>
+    @RenderBody()
+    @RenderSection("FootScripts", false)
+</body>
+</html>

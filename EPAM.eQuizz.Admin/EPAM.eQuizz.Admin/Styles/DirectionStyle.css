@@ -1,0 +1,7 @@
+﻿.sortorder:after {
+    content: '\25b2';
+}
+
+.sortorder.direction:after {
+    content: '\25bc';
+}
