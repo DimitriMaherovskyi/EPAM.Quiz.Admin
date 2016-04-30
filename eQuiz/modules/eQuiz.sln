@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.23107.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "eQuiz.Web", "eQuiz.Web\eQuiz.Web.csproj", "{1B176148-B75F-4EDF-A6AE-AC123902722D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "eQuiz.Entities", "eQuiz.Entities\eQuiz.Entities.csproj", "{E8A43CE3-D9FE-4AB4-B370-88285455FF59}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{1B176148-B75F-4EDF-A6AE-AC123902722D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1B176148-B75F-4EDF-A6AE-AC123902722D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1B176148-B75F-4EDF-A6AE-AC123902722D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1B176148-B75F-4EDF-A6AE-AC123902722D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E8A43CE3-D9FE-4AB4-B370-88285455FF59}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E8A43CE3-D9FE-4AB4-B370-88285455FF59}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E8A43CE3-D9FE-4AB4-B370-88285455FF59}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E8A43CE3-D9FE-4AB4-B370-88285455FF59}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

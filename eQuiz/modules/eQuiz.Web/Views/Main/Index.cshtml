@@ -1,0 +1,30 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div ng-app="equizModule">
+    <div ng-controller="LayoutController as lc">
+        <div layout="row">
+            <div>
+                <button style="text-decoration:solid; font-size:20px" ng-click="lc.GoToReview()">
+                    Students
+                </button>
+                <button style="text-decoration:solid; font-size:20px">
+                    Quizzes
+                </button>
+                <button style="text-decoration:solid; font-size:20px; margin-left:75vw">
+                    Full Name
+                </button>
+            </div>
+        </div>
+        <div compile="lc.review"></div>
+    </div>
+</div>   
+
+@section FootScripts
+{
+    <script src="~/Scripts/app/shared/equiz.module.js"></script>
+    <script src="~/Scripts/app/admin/review/equiz.reviewDataService.js"></script>
+    <script src="~/Scripts/app/admin/review/equiz.reviewController.js"></script>
+    <script src="~/Scripts/app/admin/equiz.layoutController.js"></script>
+}

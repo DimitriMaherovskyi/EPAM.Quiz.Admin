@@ -1,0 +1,44 @@
+﻿<div ng-controller="ReviewController">
+    <br />
+    <br />
+    <label>Search</label>
+    <input type="text" ng-model="search" style="width:15em">
+
+
+    <div style="overflow-x:auto;">
+        <table class="reviewTable">
+            <thead>
+                <tr>
+                    <th ng-repeat="h in headers">
+                        <a href="#" ng-click="refreshPredicate(h.predicateIndex);order(myPredicate,null)">
+                            <span class="sortorder" ng-show="direction(h.predicateIndex) !== null" ng-class="{direction:direction(h.predicateIndex)}"></span>
+                            {{h.name}}
+                        </a>
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="c in content | filter: {student:search} | startFrom: tablePage*resultsPerPage | limitTo: resultsPerPage">
+                    <td ng-bind-html="c.student | highlight: search">{{c.student}}</td>
+                    <td>{{c.userGroup}}</td>
+                    <td>{{c.quizzes}}</td>
+                </tr>
+            </tbody>
+        </table> 
+        <div layout="row">
+            <span>
+                Rows on the page:
+                <select class="md-primary" ng-model="ResultsPerPage">
+                    <option ng-repeat="pages in resultsCount" ng-value="{{pages}}">{{pages}}</option>
+                </select>
+            </span>
+            <span ng-show="numberOfPages() &gt; 1">
+                <button ng-disabled="tablePage==0" ng-click="tablePage=tablePage-1">Previous page</button>
+                <span ng-repeat="i in getNumber(numberOfPages()) track by $index">
+                    <button ng-click="goToPage($index)"><span ng-class="{ 'table-active-page' : tablePage==$index}">{{$index+1}}</span></button>
+                </span>
+                <button ng-disabled="tablePage==numberOfPages()-1" ng-click="tablePage=tablePage+1">Next page</button>
+            </span>
+        </div>
+    </div>
+</div>
