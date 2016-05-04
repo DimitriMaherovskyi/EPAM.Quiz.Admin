@@ -105,7 +105,48 @@ angular.module('equizModule').controller('ReviewController', ReviewController);
 
     $scope.goToPage = function (page) {
         $scope.tablePage = page;
-  };
+    };
+    
+    $scope.selectedGroup = [];
+    $scope.groupList = GetUniquePropertyValues($scope.content, 'userGroup'); //property user group needs to be changed manualy    
+
+    $scope.setSelectedGroup = function () { // DONT PUT THIS FUNCTION INTO VM! let it be in scope (because of 'this' in function)
+        var id = this.group;
+        if (_.contains($scope.selectedGroup, id)) {
+            $scope.selectedGroup = _.without($scope.selectedGroup, id);
+        } else {
+            $scope.selectedGroup.push(id);
+        }
+        return false;
+    };
+
+    $scope.isChecked = function (group) {
+        if (_.contains($scope.selectedGroup, group)) {
+            return 'icon-ok pull-right';
+        }
+        return false;
+    };
+
+    $scope.checkAll = function () {
+        $scope.selectedGroup = $scope.groupList;
+    };
+
+    function GetUniquePropertyValues(arrayToCheck, propertyName) {
+        var flags = [];
+        var output = [];
+        for (var i = 0; i < arrayToCheck.length; i++) {
+            if (flags[arrayToCheck[i][propertyName]]) {
+                continue;
+            }
+
+            flags[arrayToCheck[i][propertyName]] = true;
+            output.push(arrayToCheck[i][propertyName]);
+        }
+
+        return output;
+    }
+
+
 };
 
 angular.module('equizModule').filter('startFrom', function () {
@@ -117,12 +158,31 @@ angular.module('equizModule').filter('startFrom', function () {
 });
 
 angular.module("equizModule").filter('highlight', function ($sce) {
-            return function (text, phrase) {
-                if (phrase) {
-                    text = text.replace(new RegExp('(' + phrase + ')', 'gi'), '<span class="highlightedText">$1</span>');
-                }
+    return function (text, phrase) {
+        if (phrase) {
+            text = text.replace(new RegExp('(' + phrase + ')', 'gi'), '<span class="highlightedText">$1</span>');
+        }
 
-                return $sce.trustAsHtml(text);
-            }
-        })
+        return $sce.trustAsHtml(text);
+    }
+});
+
+angular.module('equizModule').filter('groupFilter', function () {
+    return function (data, selectedData) {
+        if (!angular.isUndefined(data) && !angular.isUndefined(selectedData) && selectedData.length > 0) {
+            var tempData = [];
+            angular.forEach(selectedData, function (id) {
+                angular.forEach(data, function (item) {
+                    if (angular.equals(item.userGroup, id)) { //property user group needs to be changed manualy
+                        tempData.push(item);
+                    }
+                });
+            });
+            return tempData;
+        } else {
+            return data;
+        }
+    };
+});
+
 })(angular);
