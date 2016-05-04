@@ -22,3 +22,7 @@ th, td {
 .table-active-page {
     font-weight: bold;
 }
+
+.groupBtn {
+    float:right;
+}

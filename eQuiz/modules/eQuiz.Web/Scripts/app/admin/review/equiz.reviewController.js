@@ -131,6 +131,10 @@ angular.module('equizModule').controller('ReviewController', ReviewController);
         $scope.selectedGroup = $scope.groupList;
     };
 
+    $scope.unCheckAll = function () {
+        $scope.selectedGroup = [];
+    };
+
     function GetUniquePropertyValues(arrayToCheck, propertyName) {
         var flags = [];
         var output = [];
