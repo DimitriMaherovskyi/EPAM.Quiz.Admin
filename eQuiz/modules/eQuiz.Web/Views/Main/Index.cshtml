@@ -4,7 +4,7 @@
 
 <div ng-app="equizModule">
     <div ng-controller="LayoutController as lc">
-        <div layout="row">
+        <div layout="row" style="padding:10px">
             <div>
                 <button style="text-decoration:solid; font-size:20px" ng-click="lc.GoToReview()">
                     Students
@@ -12,9 +12,9 @@
                 <button style="text-decoration:solid; font-size:20px">
                     Quizzes
                 </button>
-                <button style="text-decoration:solid; font-size:20px; margin-left:75vw">
+                <label style="text-decoration:solid; font-size:20px; float:right">
                     Full Name
-                </button>
+                </label>
             </div>
         </div>
         <div compile="lc.review"></div>
