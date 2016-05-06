@@ -98,12 +98,7 @@ angular.module('equizModule').controller('ReviewController', ReviewController);
       return new Array(num);
   };
 
-    $scope.order = function(predicate, reverse) {
-       $scope.content = orderBy($scope.content, predicate, reverse);
-       $scope.predicate = predicate;
-  };
-
-    $scope.goToPage = function (page) {
+        $scope.goToPage = function (page) {
         $scope.tablePage = page;
     };
     
