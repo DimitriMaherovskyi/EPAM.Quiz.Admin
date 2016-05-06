@@ -9,7 +9,7 @@
             <thead>
                 <tr>
                     <th ng-repeat="h in headers">
-                        <a href="#" ng-click="refreshPredicate(h.predicateIndex);order(myPredicate,null)">
+                        <a href="#" ng-click="refreshPredicate(h.predicateIndex)">
                             <span class="sortorder" ng-show="direction(h.predicateIndex) !== null" ng-class="{direction:direction(h.predicateIndex)}"></span>
                             {{h.name}}
                         </a>                        
@@ -35,7 +35,7 @@
                 </tr>
             </thead>
             <tbody>
-                <tr ng-repeat="c in contents = (content | groupFilter:selectedGroup) | filter: {student:search} | startFrom: tablePage*resultsPerPage | limitTo: resultsPerPage">
+                <tr ng-repeat="c in contents = (content | groupFilter:selectedGroup) | filter: {student:search} | startFrom: tablePage*resultsPerPage | limitTo: resultsPerPage | orderBy: myPredicate">
                     <td ng-bind-html="c.student | highlight: search">{{c.student}}</td>
                     <td>{{c.userGroup}}</td>
                     <td>{{c.quizzes}}</td>
