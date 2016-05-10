@@ -36,6 +36,48 @@
           student: 'Ostap Gereley',
           userGroup: 'Moderator',
           quizzes: 'ASP.NET MVC'
+      },
+      {
+          student: 'Eugene Shtefaniuk',
+          userGroup: 'User',
+          quizzes: 'dotNet, HTML'
+      }, {
+          student: 'Dmytro Maherovsky',
+          userGroup: 'Admin',
+          quizzes: 'dotNet, Angular'
+      }, {
+          student: 'Galyna Posivnych',
+          userGroup: 'Admin',
+          quizzes: 'dotNet'
+      }, {
+          student: 'Lev-Ivan Bulyk',
+          userGroup: 'User',
+          quizzes: 'ASP.NET MVC'
+      }, {
+          student: 'Ostap Gereley',
+          userGroup: 'Moderator',
+          quizzes: 'ASP.NET MVC'
+      },
+      {
+          student: 'Eugene Shtefaniuk',
+          userGroup: 'User',
+          quizzes: 'dotNet, HTML'
+      }, {
+          student: 'Dmytro Maherovsky',
+          userGroup: 'Admin',
+          quizzes: 'dotNet, Angular'
+      }, {
+          student: 'Galyna Posivnych',
+          userGroup: 'Admin',
+          quizzes: 'dotNet'
+      }, {
+          student: 'Lev-Ivan Bulyk',
+          userGroup: 'User',
+          quizzes: 'ASP.NET MVC'
+      }, {
+          student: 'Ostap Gereley',
+          userGroup: 'Moderator',
+          quizzes: 'ASP.NET MVC'
       }
             ];
             return promise;

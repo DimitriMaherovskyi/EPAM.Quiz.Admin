@@ -98,17 +98,22 @@ angular.module('equizModule').controller('ReviewController', ReviewController);
       return new Array(num);
   };
 
-        $scope.goToPage = function (page) {
+    $scope.goToPage = function (page) {
         $scope.tablePage = page;
     };
     
     $scope.selectedGroup = [];
-    $scope.groupList = GetUniquePropertyValues($scope.content, 'userGroup'); //property user group needs to be changed manualy    
 
+    $scope.groupList = GetUniquePropertyValues($scope.content, 'userGroup'); //property user group needs to be changed manualy    
+       
     $scope.setSelectedGroup = function () { // DONT PUT THIS FUNCTION INTO VM! let it be in scope (because of 'this' in function)
         var id = this.group;
-        if (_.contains($scope.selectedGroup, id)) {
-            $scope.selectedGroup = _.without($scope.selectedGroup, id);
+        if ($scope.selectedGroup.toString().indexOf(id.toString()) > -1) {
+            for (var i = 0; i < $scope.selectedGroup.length; i++) {
+                if ($scope.selectedGroup[i] === id) {
+                    $scope.selectedGroup.splice(i, 1);
+                }
+            }
         } else {
             $scope.selectedGroup.push(id);
         }
@@ -116,7 +121,7 @@ angular.module('equizModule').controller('ReviewController', ReviewController);
     };
 
     $scope.isChecked = function (group) {
-        if (_.contains($scope.selectedGroup, group)) {
+        if ($scope.selectedGroup.toString().indexOf(group.toString()) > -1) {
             return 'icon-ok pull-right';
         }
         return false;

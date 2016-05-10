@@ -97,7 +97,6 @@
     <Content Include="Scripts\app\admin\review\equiz.reviewDataService.js" />
     <Content Include="Scripts\app\admin\review\equiz.reviewController.js" />
     <Content Include="Styles\bootstrap-combined.css" />
-    <Content Include="Scripts\libs\underscore-min.js" />
     <Content Include="Styles\equiz-temp.css" />
     <Content Include="Web.config" />
   </ItemGroup>
